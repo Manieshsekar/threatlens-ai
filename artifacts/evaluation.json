@@ -1,0 +1,166 @@
+{
+  "dataset": "UCI PhiUSIIL",
+  "source": "https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset",
+  "sha256": "a236549cd369cd80bd478ff8e1779cbf44c58d5c3f79f7a51a1adbed7d06d1c6",
+  "input_rows": 235795,
+  "usable_unique_urls": 235356,
+  "invalid_urls": 14,
+  "conflicting_urls_removed": 0,
+  "feature_version": "lexical-1.0",
+  "feature_names": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "subdomain_count",
+    "dot_count",
+    "hyphen_count",
+    "underscore_count",
+    "slash_count",
+    "digit_count",
+    "letter_count",
+    "digit_ratio",
+    "letter_ratio",
+    "entropy",
+    "is_ip",
+    "is_https",
+    "nonstandard_port",
+    "punycode",
+    "percent_count",
+    "parameter_count",
+    "max_char_run",
+    "suspicious_extension",
+    "credential_words",
+    "brand_match",
+    "shortener",
+    "redirect_parameter",
+    "at_count",
+    "equal_count",
+    "question_count",
+    "host_digit_ratio"
+  ],
+  "label_mapping": {
+    "source_phishing": 0,
+    "internal_phishing": 1
+  },
+  "split": {
+    "train": {
+      "rows": 139617,
+      "domains": 118621,
+      "phishing": 58546
+    },
+    "calibration": {
+      "rows": 26008,
+      "domains": 19770,
+      "phishing": 12595
+    },
+    "validation": {
+      "rows": 22376,
+      "domains": 19771,
+      "phishing": 8919
+    },
+    "test": {
+      "rows": 47355,
+      "domains": 39541,
+      "phishing": 20446
+    }
+  },
+  "group_overlap": 0,
+  "selection": "Logistic regression selected for portable auditable inference. ExtraTrees is a comparison.",
+  "threshold": 0.4000000000000001,
+  "logistic_validation": {
+    "accuracy": 0.9908830890239543,
+    "precision": 0.993097204933801,
+    "recall": 0.9839668124229174,
+    "f1": 0.9885109258842082,
+    "f2": 0.9857794352211714,
+    "roc_auc": 0.9945823376177878,
+    "pr_auc": 0.9956868309353967,
+    "fpr": 0.004532956825444007,
+    "fnr": 0.016033187577082633,
+    "brier": 0.008009614738480136,
+    "confusion_matrix": [
+      [
+        13396,
+        61
+      ],
+      [
+        143,
+        8776
+      ]
+    ]
+  },
+  "extra_trees_validation": {
+    "accuracy": 0.989095459420808,
+    "precision": 0.9975909143053803,
+    "recall": 0.9749971969951788,
+    "f1": 0.9861646631889317,
+    "f2": 0.9794336945013854,
+    "roc_auc": 0.9970477654267267,
+    "pr_auc": 0.9974366907267208,
+    "fpr": 0.0015605261202348221,
+    "fnr": 0.02500280300482117,
+    "brier": 0.013952275520889153,
+    "confusion_matrix": [
+      [
+        13436,
+        21
+      ],
+      [
+        223,
+        8696
+      ]
+    ]
+  },
+  "logistic_test": {
+    "accuracy": 0.9916376306620209,
+    "precision": 0.9941344637223974,
+    "recall": 0.9864521177736476,
+    "f1": 0.9902783915156872,
+    "f2": 0.9879790735951093,
+    "roc_auc": 0.9948541373300553,
+    "pr_auc": 0.9962934575333767,
+    "fpr": 0.004422312237541343,
+    "fnr": 0.013547882226352342,
+    "brier": 0.00755258146678733,
+    "confusion_matrix": [
+      [
+        26790,
+        119
+      ],
+      [
+        277,
+        20169
+      ]
+    ]
+  },
+  "extra_trees_test": {
+    "accuracy": 0.9871819237672896,
+    "precision": 0.9980918905347728,
+    "recall": 0.9721705957155434,
+    "f1": 0.9849607294170115,
+    "f2": 0.9772465805956794,
+    "roc_auc": 0.9972360371301092,
+    "pr_auc": 0.9977382826664751,
+    "fpr": 0.0014121669329963953,
+    "fnr": 0.027829404284456617,
+    "brier": 0.014878491519942328,
+    "confusion_matrix": [
+      [
+        26871,
+        38
+      ],
+      [
+        569,
+        19877
+      ]
+    ]
+  },
+  "limitations": [
+    "Single-source historical benchmark",
+    "No temporal holdout: collection timestamps unavailable",
+    "Calibration measured only on this source",
+    "Source shortcuts including HTTPS may dominate",
+    "Risk fusion is not a calibrated probability"
+  ]
+}
