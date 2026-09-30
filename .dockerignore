@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+.next
+dist
+.sites-runtime
+.wrangler
+__pycache__
+.pytest_cache
+*.zip
+*.docx
+*.pdf

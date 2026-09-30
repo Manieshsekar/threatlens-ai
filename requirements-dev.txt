@@ -1,0 +1,5 @@
+-r backend/requirements.txt
+pytest==9.1.1
+scikit-learn==1.8.0
+pandas==2.2.3
+numpy==2.3.5
