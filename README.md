@@ -1,8 +1,8 @@
 # ThreatLens AI
 
-An explainable URL investigation workspace with a trained lexical model, domain intelligence collectors, and a portable FastAPI/PostgreSQL backend. Built from scratch for Steve.
+An explainable URL investigation workspace with a trained lexical model, domain intelligence collectors, and a portable FastAPI/PostgreSQL backend. A final-year machine-learning project.
 
-**Public release 2:** open [ThreatLens AI](https://threatlens-steve.appumaniesh.chatgpt.site). Visitors need no Docker or ChatGPT workspace access. It includes model inference, bounded DNS/RDAP lookups, server-saved history, private personal reviews, follow-up flags, review activity, deletion, JSON export, and browser printing. The UI includes accessible motion and a [public guide](https://threatlens-steve.appumaniesh.chatgpt.site/guide).
+**Public release 2:** open [ThreatLens AI](https://threatlens-steve.appumaniesh.chatgpt.site). Visitors can use the website directly in a browser without installing Docker. It includes model inference, bounded DNS/RDAP lookups, server-saved history, private personal reviews, follow-up flags, review activity, deletion, JSON export, and browser printing. The UI includes accessible motion and a [public guide](https://threatlens-steve.appumaniesh.chatgpt.site/guide).
 
 Public records live in Cloudflare D1 and are separated by a secure anonymous browser cookie. The latest 200 reports are available for 30 days. There is no named account, cross-device recovery, or global verified reputation from public reviews. Cookie clearing or expiry loses access; export important reports. Submitted URL paths and queries are redacted before saving.
 
@@ -98,3 +98,4 @@ Before internet-facing deployment, configure HTTPS, `COOKIE_SECURE=1`, `PUBLIC_O
 - URLhaus API: https://urlhaus-api.abuse.ch/
 
 Project-specific source is released under the MIT license. Bundled starter components and third-party libraries retain their respective licenses. No paid accounts or provider subscriptions were created.
+
