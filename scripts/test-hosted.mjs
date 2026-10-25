@@ -12,7 +12,7 @@ const done=name=>checks.push(name);
 const urls=new Map();
 function compile(file){
  if(urls.has(file))return urls.get(file);
- let source=fs.readFileSync(file,'utf8');
+ let source=fs.readFileSync(file,'utf8').replace("import validation from '../../../../artifacts/scoring-validation.json';", 'const validation='+fs.readFileSync('artifacts/scoring-validation.json','utf8')+';');
  source=source.replace(/import\s+(?:type\s+)?[^;]+?from\s+['"](@\/[^'"]+|\.\.\/artifacts\/model.json|\.\/psl.json)['"];?/g,(statement,path)=>{
   if(path.endsWith('.json'))return 'const '+(path.includes('model')?'model':'rules')+'='+fs.readFileSync(path.includes('model')?'artifacts/model.json':'lib/psl.json','utf8')+';';
   if(path==='@/db')return 'const getDatabase=()=>globalThis.__hostedTestDb;';
