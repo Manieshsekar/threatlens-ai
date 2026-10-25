@@ -203,6 +203,15 @@ def signals(n, f):
                 }
             )
 
+    # This is an impersonation warning, not a domain safety allowlist. Shared
+    # hosting and individual pages on the named platforms remain unverified.
+    platforms = {"github": ("github.com", "github.io"), "coursera": ("coursera.org", "coursera.com"), "youtube": ("youtube.com",), "linkedin": ("linkedin.com",)}
+    imitation = any(
+        re.search(r"(?:^|[.-])" + name + r"(?:[.-]|$)", n["hostname"])
+        and not any(n["hostname"] == base or n["hostname"].endswith("." + base) for base in bases)
+        for name, bases in platforms.items()
+    )
+    add(imitation, "Platform name on a different domain", "The hostname refers to a familiar platform but is outside that platform's expected domain. Verify ownership independently.", 35)
     add(
         f["brand_match"],
         "Brand reference outside its standard domain",

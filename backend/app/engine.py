@@ -53,7 +53,7 @@ def assess(n, observations=None, verification=None):
             "probability": round(p, 6),
             "threshold": m["threshold"],
             "classification": "phishing" if p >= m["threshold"] else "legitimate",
-            "calibration_scope": "historical PhiUSIIL benchmark",
+            "calibration_scope": m.get("calibration_scope", "historical PhiUSIIL benchmark"),
         },
         "signals": rules,
         "features": f,
