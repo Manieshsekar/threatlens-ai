@@ -1,0 +1,15 @@
+{
+  "checked_date": "2026-10-24",
+  "reference_urls": 500,
+  "reference_domains": 37,
+  "high_risk_before": 443,
+  "high_risk_after": 0,
+  "warnings_before": 463,
+  "warnings_after": 0,
+  "scope": "Curated benign-reference URL regression, not live phishing detection accuracy. No reference-test domains used for training, calibration or threshold selection.",
+  "historical_test_urls": 47246,
+  "backend_checks": 40,
+  "hosted_database_checks": 20,
+  "cross_language_parity_checks": 308,
+  "live_endpoint_checks": null
+}
